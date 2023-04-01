@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="zlib.lib"
+				AdditionalDependencies="lib\zlib.lib"
 				LinkIncremental="2"
 				IgnoreDefaultLibraryNames="msvcrt.lib"
 				GenerateDebugInformation="true"
@@ -139,7 +139,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="zlib.lib"
+				AdditionalDependencies="lib\zlib.lib"
 				LinkIncremental="1"
 				IgnoreDefaultLibraryNames="msvcrt.lib"
 				GenerateDebugInformation="false"

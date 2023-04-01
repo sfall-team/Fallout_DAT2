@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "DatFile2.h"
 
-#include <zlib.h>
+#include "zlib\zlib.h"
 
 #if defined(_UNICODE) || defined(UNICODE)
 #error UNICODE not supported
