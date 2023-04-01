@@ -41,8 +41,8 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 	else {
-		printf("Fallout DAT-files packer/unpacker, version 2.32\n");
-		printf("Copyright (C) Anchorite (TeamX), 2004-2006\n");
+		printf("Fallout DAT file packer/unpacker, version 2.33\n");
+		printf("Copyright (C) 2004-2023, Anchorite (TeamX)\n");
 		printf("anchorite2001@yandex.ru\n");
 		printf("\n");
 
@@ -69,7 +69,7 @@ int main(int argc, char* argv[])
 			}
 
 			case -3: {
-				printf("Error: Name of dat-file is omitted\n");
+				printf("Error: Name of DAT file is omitted\n");
 				return 1;
 			}
 
@@ -156,24 +156,24 @@ int main(int argc, char* argv[])
 
 void PrintUsage(char* lpszFileName)
 {
-	printf("Usage: %s <command> [options] [-t dir] [-d dir] dat-file [list | @response-file]\n", lpszFileName);
+	printf("Usage: %s <command> [options] [-t dir] [-d dir] DAT_file [list | @response_file]\n", lpszFileName);
 	printf("\n");
 	printf("Commands\n");
-	printf("  a: Add files to dat-file. Create new if dat-file not exist\n");
-	printf("  x: Extract files from dat-file\n");
-	printf("  d: Delete files from dat-file (only info about files)\n");
-	printf("  l: List files in dat-file\n");
-	printf("  k: Shrink dat-file\n");
+	printf("  a: Add files to DAT file. Create new if DAT file does not exist\n");
+	printf("  x: Extract files from DAT file\n");
+	printf("  d: Delete files from DAT file (only info about files)\n");
+	printf("  l: List files in DAT file\n");
+	printf("  k: Shrink DAT file\n");
 	printf("\n");
 	printf("Options\n");
-	printf("  -s: create Fallout 1 dat-file\n");
-	printf("  -r: recurse into directories\n");
+	printf("  -s: create Fallout 1 DAT file\n");
+	printf("  -r: recurse into subdirectories\n");
 	printf("  -0..9: Compression method\n");
 	printf("         (Fallout1: 0 - store, other numbers - compress (default)\n");
 	printf("         (Fallout2: 0 - store, 1 - best speed, 9 - best compression (default)\n");
 	printf("  -p: extract without paths\n");
 	printf("  -d: extract files into specified directory\n");
-	printf("  -t: add files to specified directory of dat-file\n");
+	printf("  -t: add files to specified directory of DAT file\n");
 	printf("  --: end of options\n");
 
 	printf("\n");

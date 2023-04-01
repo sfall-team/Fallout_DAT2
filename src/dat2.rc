@@ -65,8 +65,8 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,3,2,0
- PRODUCTVERSION 2,3,2,0
+ FILEVERSION 2,3,3,0
+ PRODUCTVERSION 2,3,3,0
  FILEFLAGSMASK 0x17L
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -82,13 +82,13 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "CompanyName", "Anchorite (TeamX)"
-            VALUE "FileDescription", "Fallout dat-file packer/unpacker"
-            VALUE "FileVersion", "2, 3, 2, 0"
-            VALUE "InternalName", "Fallout dat-file packer/unpacker"
-            VALUE "LegalCopyright", "Copyright (C) Anchorite (TeamX), 2004-2006"
+            VALUE "FileDescription", "Fallout DAT file packer/unpacker"
+            VALUE "FileVersion", "2.33"
+            VALUE "InternalName", "Fallout DAT file packer/unpacker"
+            VALUE "LegalCopyright", "Copyright (C) 2004-2023, Anchorite (TeamX)"
             VALUE "OriginalFilename", "dat2.exe"
-            VALUE "ProductName", "Fallout dat-file packer/unpacker"
-            VALUE "ProductVersion", "2, 3, 2, 0"
+            VALUE "ProductName", "Fallout DAT file packer/unpacker"
+            VALUE "ProductVersion", "2.33"
         END
     END
     BLOCK "VarFileInfo"
