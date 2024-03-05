@@ -19,8 +19,8 @@ Original author: **Anchorite (TeamX)**
     -s: create Fallout 1 DAT file
     -r: recurse into subdirectories
     -0..9: Compression method
-           (Fallout1: 0 - store, other numbers - compress (default)
-           (Fallout2: 0 - store, 1 - best speed, 9 - best compression (default)
+           (Fallout1: 0 - store, other numbers - compress (default))
+           (Fallout2: 0 - store, 1 - best speed, 9 - best compression (default))
     -p: extract without paths
     -d: extract files into specified directory
     -t: add files to specified directory of DAT file

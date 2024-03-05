@@ -41,8 +41,8 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 	else {
-		printf("Fallout DAT file packer/unpacker, version 2.33\n");
-		printf("Copyright (C) 2004-2023, Anchorite (TeamX)\n");
+		printf("Fallout DAT file packer/unpacker, version 2.33a\n");
+		printf("Copyright (C) 2004-2024, Anchorite (TeamX)\n");
 		printf("anchorite2001@yandex.ru\n");
 		printf("\n");
 
@@ -169,8 +169,8 @@ void PrintUsage(char* lpszFileName)
 	printf("  -s: create Fallout 1 DAT file\n");
 	printf("  -r: recurse into subdirectories\n");
 	printf("  -0..9: Compression method\n");
-	printf("         (Fallout1: 0 - store, other numbers - compress (default)\n");
-	printf("         (Fallout2: 0 - store, 1 - best speed, 9 - best compression (default)\n");
+	printf("         (Fallout1: 0 - store, other numbers - compress (default))\n");
+	printf("         (Fallout2: 0 - store, 1 - best speed, 9 - best compression (default))\n");
 	printf("  -p: extract without paths\n");
 	printf("  -d: extract files into specified directory\n");
 	printf("  -t: add files to specified directory of DAT file\n");
