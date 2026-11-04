@@ -16,7 +16,8 @@ Set-Location $src
 
 rc /nologo /fo "$out\dat2.res" dat2.rc
 # The precompiled header is built first, then every other file compiles against it in parallel
-# Current MFC refuses a WINVER older than XP (0x0501); src/stdafx.h keeps 0x0410 as its default
+# Windows 7, the oldest the Visual Studio 2022 toolset targets; current MFC refuses a WINVER older than XP (0x0501),
+# so src/stdafx.h's own default of 0x0410 is overridden here
 $flags = '/nologo', '/c', '/O2', '/MT', '/W3', '/EHsc', '/DWIN32', '/DNDEBUG', '/D_CONSOLE', '/DWINVER=0x0601',
 	"/Fp$out\dat2.pch", "/Fo$out\"
 cl @flags /Ycstdafx.h stdafx.cpp
