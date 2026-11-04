@@ -5,7 +5,8 @@
 
 #pragma once
 
-#define WINVER	0x0410
+// Current MFC refuses a WINVER older than XP (0x0501)
+#define WINVER	0x0601
 #define _ATL_CSTRING_EXPLICIT_CONSTRUCTORS	// some CString constructors will be explicit
 
 #ifndef VC_EXTRALEAN
