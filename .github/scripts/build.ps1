@@ -23,5 +23,6 @@ cl @flags /Ycstdafx.h stdafx.cpp
 $sources = Get-ChildItem *.cpp | Where-Object Name -ne 'stdafx.cpp' | ForEach-Object Name
 cl @flags /MP /Yustdafx.h @sources
 $objects = Get-ChildItem "$out\*.obj" | ForEach-Object FullName
-link /nologo /SUBSYSTEM:CONSOLE /MACHINE:X86 /OPT:REF /OPT:ICF /NODEFAULTLIB:msvcrt.lib "/OUT:$out\dat2.exe" `
+# No manifest: the prebuilt zlib.lib asks for the VC80 CRT, which a statically linked exe does not use
+link /nologo /SUBSYSTEM:CONSOLE /MACHINE:X86 /OPT:REF /OPT:ICF /NODEFAULTLIB:msvcrt.lib /MANIFEST:NO "/OUT:$out\dat2.exe" `
 	@objects "$out\dat2.res" lib\zlib.lib
