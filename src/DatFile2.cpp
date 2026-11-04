@@ -807,8 +807,51 @@ BOOL CDatFile2::Shrink(void (*pCallback)(INT_PTR nIndex))
 
 	CFileDescriptorBase descriptor;
 
+	// Files may share one copy of their data (same offset and packed length). Any other overlap would make
+	// the moves below write over data not yet moved, so refuse it before anything is changed.
+	DWORD dwPrevOffset = 0;
+	DWORD dwPrevLength = 0;
+	DWORD dwOldEnd = 0;
+
 	for(INT_PTR i = 0; i < nFileCount; i++) {
 		descriptor = (*this)[pIndexArray[i]];
+
+		if (descriptor.m_dwPackedFileLength == 0 ||
+			(descriptor.m_dwOffset == dwPrevOffset && descriptor.m_dwPackedFileLength == dwPrevLength)) {
+			continue;
+		}
+
+		if (descriptor.m_dwOffset < dwOldEnd) {
+			printf("Error: %s overlaps the data of another file\n", descriptor.m_strFileName);
+			delete [] pIndexArray;
+			return FALSE;
+		}
+
+		dwPrevOffset = descriptor.m_dwOffset;
+		dwPrevLength = descriptor.m_dwPackedFileLength;
+		dwOldEnd = dwPrevOffset + dwPrevLength;
+	}
+
+	DWORD dwPrevNewOffset = 0;
+	dwPrevOffset = 0;
+	dwPrevLength = 0;
+
+	for(INT_PTR i = 0; i < nFileCount; i++) {
+		descriptor = (*this)[pIndexArray[i]];
+
+		// Shares the previous file's data, which is already in place
+		if (descriptor.m_dwPackedFileLength != 0 &&
+			descriptor.m_dwOffset == dwPrevOffset && descriptor.m_dwPackedFileLength == dwPrevLength) {
+			m_FileList[pIndexArray[i]].m_dwOffset = dwPrevNewOffset;
+			continue;
+		}
+
+		if (descriptor.m_dwPackedFileLength != 0) {
+			dwPrevOffset = descriptor.m_dwOffset;
+			dwPrevLength = descriptor.m_dwPackedFileLength;
+			dwPrevNewOffset = dwWritePos;
+		}
+
 		dwShift = descriptor.m_dwOffset - dwWritePos;
 
 		if (dwShift > 0) {
