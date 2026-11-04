@@ -901,7 +901,7 @@ BOOL CDatFile1::Shrink(void (*pCallback)(INT_PTR nIndex))
 		}
 
 		if (descriptor.m_dwOffset < dwOldEnd) {
-			printf("Error: %s overlaps the data of another file\n", descriptor.m_strFileName);
+			printf("Error: %s overlaps the data of another file\n", (LPCTSTR)descriptor.m_strFileName);
 			delete [] pIndexArray;
 			return FALSE;
 		}
