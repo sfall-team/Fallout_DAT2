@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 	else {
-		printf("Fallout DAT file packer/unpacker, version 2.33b\n");
+		printf("Fallout DAT file packer/unpacker, version 2.34\n");
 		printf("Copyright (C) 2004-2026, Anchorite (TeamX)\n");
 		printf("anchorite2001@yandex.ru\n");
 		printf("\n");
